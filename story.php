@@ -12,9 +12,6 @@ if($_REQUEST['event']=='NewChat')
 		echo "<response><chat-reply>Hi,I am a story bot. If you want to hear a story please type next. Or say bye to close me. I show 1 page at a time. Type 'next' to get the next page.</chat-reply></response>";
 }
 
-//echo json_encode($_REQUEST);
-//echo "hello";
-//echo json_encode($_GET);
 if($_REQUEST['event']=='Reply')
 {
 	
@@ -22,7 +19,7 @@ if($_REQUEST['event']=='Reply')
 	{
 		if($_SESSION['current_page']<=$_SESSION['number_of_pages'])
 		{
-			echo "<response><chat-reply type='image'>http://kookoo.in/customers/fbchat/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png</chat-reply></response>";
+			echo "<response><chat-reply type='image'>{url of stories folder}/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png</chat-reply></response>";
 			$_SESSION['current_page']=$_SESSION['current_page']+1;
 		}
 		else

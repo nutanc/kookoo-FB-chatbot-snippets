@@ -20,7 +20,7 @@ if($_REQUEST['event']=='Reply')
 		if($_SESSION['current_page']<=$_SESSION['number_of_pages'])
 		{
 			$_SESSION['current_page']=$_SESSION['current_page']+1;
-			echo "<response><template-reply><send-template title='Page' image_url='http://kookoo.in/customers/fbchat/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png'><button button_type = 'postback' button_title = 'Next'>".$_SESSION['current_page']."</button></send-template></template-reply></response>";
+			echo "<response><template-reply><send-template title='Page' image_url='{url}/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png'><button button_type = 'postback' button_title = 'Next'>".$_SESSION['current_page']."</button></send-template></template-reply></response>";
 		}
 		else
 			echo "<response><chat-reply>Thanks for listening to the story.Bye. Say Hi to start another story.</chat-reply><disconnect/></response>";
@@ -37,7 +37,7 @@ if($_REQUEST['event']=='postback')
 		if($_SESSION['current_page']<=$_SESSION['number_of_pages'])
 		{
 			$_SESSION['current_page']=$_SESSION['current_page']+1;
-			echo "<response><template-reply><send-template title='Page' image_url='http://kookoo.in/customers/fbchat/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png'><button button_type = 'postback' button_title = 'Next'>".$_SESSION['current_page']."</button></send-template></template-reply></response>";
+			echo "<response><template-reply><send-template title='Page' image_url='{url}/stories/story".$_SESSION['story_number']."/story-".$_SESSION['current_page'].".png'><button button_type = 'postback' button_title = 'Next'>".$_SESSION['current_page']."</button></send-template></template-reply></response>";
 		}
 		else
 			echo "<response><chat-reply>Thanks for listening to the story.Bye. Say Hi to start another story.</chat-reply><disconnect/></response>";
